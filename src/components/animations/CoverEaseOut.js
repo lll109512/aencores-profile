@@ -18,11 +18,11 @@ const CoverEaseOut = (props) => {
             <div style={{zIndex:60}}>
                 {children}
             </div>
-            <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen z-50' style={{backgroundColor:'white'}}/>
-            <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen bg-gray-200 z-40'/>
-            <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen bg-gray-400 z-30'/>
-            <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen bg-gray-600 z-20'/>
             <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen bg-gray-700 z-10'/>
+            <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen bg-gray-600 z-20'/>
+            <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen bg-gray-400 z-30'/>
+            <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen bg-gray-200 z-40'/>
+            <motion.div variants={variants} transition={defaultTransition} className='absolute h-screen w-screen z-50' style={{backgroundColor:'white'}}/>
         </motion.div>
     )
 }

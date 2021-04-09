@@ -7,14 +7,17 @@ const variants = {
         y:'-100vh'
     },
     exit:{
-        y:0
+        y:0,
+        transitionEnd:{
+            display:'none'
+        }
     }
 }
 
 const CoverEaseOut = (props) => {
     const {children} = props
     return (
-        <motion.div initial={'initial'} exit={'exit'} transition={{staggerChildren: 0.1,...defaultTransition}}>
+        <motion.div className='fixed' initial={'initial'} exit={'exit'} transition={{staggerChildren: 0.1,...defaultTransition}}>
             <div style={{zIndex:60}}>
                 {children}
             </div>

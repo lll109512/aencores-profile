@@ -1,20 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
 import { defaultTransition } from 'helper/animationHelper'
 
 const variants = {
     out:{
-        y:0
+        y:0,
     },
     in:{
-        y:'-100vh'
+        y:'-100vh',
+        transitionEnd:{
+            display:'none',
+        }
     }
 }
 
 const CoverEaseIn = (props) => {
     const {children} = props
+    const [canScroll, setCanScroll] = useState(false);
+    useEffect(() => {
+    if (canScroll === false) {
+        document.querySelector("body").classList.add("no-scroll");
+    } else {
+        document.querySelector("body").classList.remove("no-scroll");
+    }
+    }, [canScroll]);
     return (
-        <motion.div animate={'in'} transition={{staggerChildren: 0.1,...defaultTransition}}>
+        <motion.div className='fixed' onAnimationComplete={()=>setCanScroll(true)} animate={'in'} transition={{staggerChildren: 0.1,...defaultTransition}}>
             <div style={{zIndex:60}}>
                 {children}
             </div>

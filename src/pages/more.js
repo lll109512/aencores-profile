@@ -4,10 +4,10 @@ import CoverEaseOut from 'components/animations/CoverEaseOut'
 
 const more = (props) => {
     return (
-        <div>
+        <div className='bg-gray-800 h-full w-full min-h-screen flex'>
             <CoverEaseIn/>
             <CoverEaseOut/>
-            more
+            <div className='text-gray-50'>more</div>
         </div>
     )
 }

@@ -21,6 +21,14 @@ module.exports = {
       blue: colors.lightBlue,
       red: colors.rose,
       pink: colors.fuchsia,
+      white:'rgb(234,241,240)',
+      black:colors.gray[800],
+      grayWhite:'rgb(209,222,229)',
+      grayBlue:'rgb(167,189,220)',
+      grayBlueDeep:'rgb(124,150,161)',
+      deepGray:'rgb(100,110,110)',
+      lint:'rgb(213,222,224)',
+
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

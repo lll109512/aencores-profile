@@ -6,6 +6,7 @@ import SEO from 'components/layout/SEO'
 import CoverEaseIn from 'components/animations/CoverEaseIn'
 import CoverEaseOut from 'components/animations/CoverEaseOut'
 import TitleEaseIn from 'components/animations/TitleEaseIn'
+import FloatActionsBar from 'components/animations/FloatActionsBar'
 import { animationRootClasses } from 'helper/styles'
 import ScrollBlock from 'components/layout/ScrollBlock'
 import { useInView } from 'react-intersection-observer';
@@ -26,6 +27,7 @@ export default function Home() {
         <div className='text-gray-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-7xl'>
           <TitleEaseIn leftTitle='Xingyu' rightTitle='Li'/>
         </div>
+        <FloatActionsBar/>
       </div>
       <ScrollBlock 
         ref={skillRef}

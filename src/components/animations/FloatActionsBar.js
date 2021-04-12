@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import { motion, useMotionValue, useAnimation, useTransform } from "framer-motion"
-import { CgWorkAlt,  CgListTree ,CgToolbox, CgWebsite ,CgImage, CgDarkMode, CgHome } from 'react-icons/Cg';
-import { MdLanguage } from 'react-icons/Md';
-import { FaUniversity } from 'react-icons/Fa';
+import { CgWorkAlt,  CgListTree ,CgToolbox, CgWebsite ,CgImage, CgDarkMode, CgHome } from 'react-icons/cg';
+import { MdLanguage } from 'react-icons/md';
+import { FaUniversity } from 'react-icons/fa';
 import { defaultTransition } from 'helper/animationHelper'
 
 const iconVariants = {

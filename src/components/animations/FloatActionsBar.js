@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react'
 import { motion, useMotionValue, useAnimation, useTransform } from "framer-motion"
 import { CgWorkAlt,  CgListTree ,CgToolbox, CgWebsite ,CgImage, CgDarkMode, CgHome } from 'react-icons/Cg';
-import { IoSchoolOutline } from 'react-icons/Io';
 import { MdLanguage } from 'react-icons/Md';
 import { FaUniversity } from 'react-icons/Fa';
 import { defaultTransition } from 'helper/animationHelper'

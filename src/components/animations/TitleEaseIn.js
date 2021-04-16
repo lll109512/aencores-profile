@@ -90,14 +90,14 @@ const TitleEaseIn = (props) => {
             <div>
                 <motion.span className='inline-block' variants={firstName}>
                     {leftLetters.map((char,index)=>
-                        <motion.span className='inline-block select-none' variants={letter} index={char}>
+                        <motion.span className='inline-block select-none' variants={letter} key={index}>
                             {char}
                         </motion.span>
                     )}
                 </motion.span>
                 <motion.span className='inline-block' variants={lastName} className='ml-8'>
                     {rightLetters.map((char,index)=>
-                        <motion.span className='inline-block select-none' variants={letter} index={char}>
+                        <motion.span className='inline-block select-none' variants={letter} key={index}>
                             {char}
                         </motion.span>
                     )}

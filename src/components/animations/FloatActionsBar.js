@@ -4,6 +4,7 @@ import { CgWorkAlt,  CgListTree ,CgToolbox, CgWebsite ,CgImage, CgDarkMode, CgHo
 import { MdLanguage } from 'react-icons/md';
 import { FaUniversity } from 'react-icons/fa';
 import { defaultTransition } from 'helper/animationHelper'
+import NavIcon from './NavIcon'
 
 const iconVariants = {
     initial:({index})=>({
@@ -27,30 +28,6 @@ const iconVariants = {
     })
 }
 
-const whileHoverIconAnimation = {
-    hover:{
-        y:-30,
-        opacity:1,
-        transition:{
-            ...defaultTransition,
-        }
-    }
-}
-const whileHoverTextAnimation = {
-    initial:{
-        opacity:0,
-        y:0,
-    },
-    hover:{
-        y:-25,
-        opacity:1,
-        transition:{
-            ...defaultTransition,
-            delay:0
-        }
-    }
-}
-
 const FloatActionsBar = (props) => {
     const controls = useAnimation()
     useEffect(async () => {
@@ -64,12 +41,12 @@ const FloatActionsBar = (props) => {
             icon:<CgHome size={30} color='white'/>
         },
         { 
-            label:'Experience',
-            icon:<CgWorkAlt size={30} color='white'/>
-        },
-        { 
             label:'Skills',
             icon:<CgListTree size={30} color='white'/>
+        },
+        { 
+            label:'Experience',
+            icon:<CgWorkAlt size={30} color='white'/>
         },
         { 
             label:'Tools',
@@ -101,14 +78,11 @@ const FloatActionsBar = (props) => {
             <motion.div initial='initial' animate={controls} className='flex flex-row'>
                 {icons.map(({label,icon},index)=>
                     <motion.div 
-                        className='mx-6' 
+                        className='lg:mx-6 sm:mx-4' 
                         key={label} 
                         variants={iconVariants} 
                         custom={{index}}>
-                        <motion.div initial="initial" whileHover={'hover'} className='w-10 flex flex-col cursor-pointer items-center'>
-                            <motion.div variants={whileHoverIconAnimation}>{icon}</motion.div>
-                            <motion.h1 variants={whileHoverTextAnimation} className='text-white'>{label}</motion.h1>
-                        </motion.div>
+                       <NavIcon label={label} icon={icon}/>
                     </motion.div>
                 )}
             </motion.div>

@@ -20,9 +20,6 @@ const outerTextVariants = {
             delay:0.5,
             ...defaultTransition,
         },
-        // transitionEnd:{
-        //     display:'none',
-        // }
     }
 }
 
@@ -41,6 +38,7 @@ const innerTextVariants = {
 
 const innerBlockVariants = {
     initial:{
+        opacity:1,
         scaleY:0,
         translateY:'3.5rem'
     },
@@ -58,9 +56,6 @@ const innerBlockVariants = {
             ...defaultTransition,
             delay:1,
         },
-        transitionEnd:{
-            display:'none',
-        }
     }
 }
 
@@ -69,7 +64,7 @@ const SeparateText = (props) => {
     const { innerText, outerText, controls } = props
 
     return (
-        <motion.div initial='initial' animate={controls} className='relative flex flex-col items-center'>
+        <motion.div animate={controls} className='relative flex flex-col items-center'>
             <motion.div variants={innerBlockVariants} className='px-12 text-gray-50 text-4xl bg-black overflow-hidden' style={{zIndex:1}}>
                 <motion.div variants={innerTextVariants} className='select-none overflow-hidden'>
                     {innerText}

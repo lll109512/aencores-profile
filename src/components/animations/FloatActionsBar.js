@@ -5,6 +5,7 @@ import { MdLanguage } from 'react-icons/md';
 import { FaUniversity } from 'react-icons/fa';
 import { defaultTransition } from 'helper/animationHelper'
 import NavIcon from './NavIcon'
+import { scroller } from 'react-scroll'
 
 const iconVariants = {
     initial:({index})=>({
@@ -29,6 +30,7 @@ const iconVariants = {
 }
 
 const FloatActionsBar = (props) => {
+    const { } = props
     const controls = useAnimation()
     useEffect(async () => {
         await controls.start('firstEnter')
@@ -42,7 +44,12 @@ const FloatActionsBar = (props) => {
         },
         { 
             label:'Skills',
-            icon:<CgListTree size={30} color='white'/>
+            icon:<CgListTree size={30} color='white'/>,
+            onClick:()=>scroller.scrollTo('skill-element', {
+                duration: 800,
+                delay: 0,
+                smooth: 'easeInOutQuart'
+              })
         },
         { 
             label:'Experience',
@@ -76,8 +83,9 @@ const FloatActionsBar = (props) => {
     return (
         <div className='absolute bottom-1/4 left-1/2 transform -translate-x-1/2'>
             <motion.div initial='initial' animate={controls} className='flex flex-row'>
-                {icons.map(({label,icon},index)=>
+                {icons.map(({label,icon,onClick},index)=>
                     <motion.div 
+                        onClick={onClick}
                         className='lg:mx-6 sm:mx-4' 
                         key={label} 
                         variants={iconVariants} 

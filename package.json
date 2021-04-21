@@ -17,6 +17,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.31.0",
+    "react-scroll": "^1.8.2",
     "react-use": "^17.2.3",
     "tailwindcss-classnames": "^2.0.7"
   },

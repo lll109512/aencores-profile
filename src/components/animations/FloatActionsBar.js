@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { motion, useMotionValue, useAnimation, useTransform } from "framer-motion"
-import { CgWorkAlt,  CgListTree ,CgToolbox, CgWebsite ,CgImage, CgDarkMode, CgHome } from 'react-icons/cg';
+import { CgWorkAlt,  CgListTree ,CgToolbox, CgWebsite ,CgImage, CgDarkMode, CgHome, CgProfile } from 'react-icons/cg';
 import { MdLanguage } from 'react-icons/md';
 import { FaUniversity } from 'react-icons/fa';
 import { defaultTransition } from 'helper/animationHelper'
@@ -37,35 +37,40 @@ const FloatActionsBar = (props) => {
         await controls.start('moveToBottom')
     }, [])
 
+    const onClickScroll = (elName)=>{
+        scroller.scrollTo(elName, {
+            duration: 1200,
+            delay: 0,
+            smooth: 'easeInOutQuart'
+          })
+    }
+
     const icons = [
         {
             label:'Home',
             icon:<CgHome size={30} color='white'/>
         },
         { 
-            label:'Skills',
-            icon:<CgListTree size={30} color='white'/>,
-            onClick:()=>scroller.scrollTo('skill-element', {
-                duration: 800,
-                delay: 0,
-                smooth: 'easeInOutQuart'
-              })
+            label:'Profile',
+            icon:<CgProfile size={30} color='white'/>,
+            onClick:()=>onClickScroll('profile-element')
         },
         { 
-            label:'Experience',
-            icon:<CgWorkAlt size={30} color='white'/>
+            label:'Skills',
+            icon:<CgListTree size={30} color='white'/>,
+            onClick:()=>onClickScroll('skill-element')
         },
         { 
             label:'Tools',
             icon:<CgToolbox size={30} color='white'/>
         },
         { 
-            label:'Projects',
-            icon:<CgWebsite size={30} color='white'/>
+            label:'Experience',
+            icon:<CgWorkAlt size={30} color='white'/>
         },
         { 
-            label:'Educations',
-            icon:<FaUniversity size={30} color='white'/>
+            label:'Projects',
+            icon:<CgWebsite size={30} color='white'/>
         },
         { 
             label:'Arts',

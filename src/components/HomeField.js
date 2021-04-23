@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import TitleEaseIn from 'components/animations/TitleEaseIn'
 import FloatActionsBar from 'components/animations/FloatActionsBar'
 
+
 const HomeField = (props) => {
     return (
       <div className='h-screen w-full relative'>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { motion, useMotionValue, useAnimation, useTransform } from "framer-motion"
 import { defaultTransition } from 'helper/animationHelper'
+import { useLockBodyScroll, useToggle } from 'react-use';
 
 const transition = { ...defaultTransition, duration: 1.2, delay:2.2 };
 
@@ -81,9 +82,13 @@ const TitleEaseIn = (props) => {
     const leftLetters = leftTitle.split('')
     const rightLetters = rightTitle.split('')
     const controls = useAnimation()
+    const [locked, toggleLocked] = useToggle(true)
+
+    useLockBodyScroll(locked);
     useEffect(async () => {
         await controls.start('animate')
         // await controls.start('moveToLeft')
+        toggleLocked()
     }, [])
     return (
         <motion.div initial='initial' animate={controls} transition={defaultTransition}>

@@ -9,21 +9,26 @@ import TitleEaseIn from 'components/animations/TitleEaseIn'
 import FloatActionsBar from 'components/animations/FloatActionsBar'
 import SkillField from 'components/SkillField'
 import HomeField from 'components/HomeField'
+import ProfileField from 'components/ProfileField'
 import { animationRootClasses } from 'helper/styles'
 import ScrollBlock from 'components/layout/ScrollBlock'
+import ColorTransBlock from 'components/layout/ColorTransBlock'
 import { useInView } from 'react-intersection-observer';
 import classnames from 'tailwindcss-classnames'
 import { Element } from 'react-scroll'
 
 const Home = (props) => {
-
   return (
     <div className={'h-full','w-full','min-h-screen','overflow-y-hidden','relative','transition-colors'} style={{transitionDuration:'1000ms'}}>
       <SEO title='Hello'/>
       <CoverEaseIn/>
-      <div >
+      <Element name='home-element'>
         <HomeField/>
-      </div>
+      </Element>
+      <ColorTransBlock transInColor='rgb(234,241,240)' transOutColor='rgba(39, 39, 42)'/>
+      <Element name="profile-element">
+        <ProfileField/>
+      </Element>
       <Element name="skill-element">
         <SkillField/>
       </Element>

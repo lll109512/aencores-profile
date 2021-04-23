@@ -10,6 +10,7 @@ import { AiFillCiCircle, AiFillAndroid } from 'react-icons/ai';
 const SkillField = (props) => {
     const { hashTag } = props
     const titleControls = useAnimation()
+    const subtitleControls = useAnimation()
     const options = {
         threshold:0.6
       }
@@ -24,7 +25,7 @@ const SkillField = (props) => {
         }
     }, [inView])
     return (
-        <motion.div ref={ref} className='h-screen w-screen relative'>
+        <motion.div ref={ref} className='h-screen w-screen relative bg-white'>
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 '>
                 <SeparateText 
                     innerText={'Developer skills'}
@@ -32,10 +33,12 @@ const SkillField = (props) => {
                     controls={titleControls}
                 />
             </div>
-            <motion.div className='text-gray-50'>
-                <div>
-                    test
-                </div>
+            <motion.div className='text-black'>
+                <motion.div initial='initial' animate={subtitleControls}>
+                    <motion.div>
+                        Skill:
+                    </motion.div>
+                </motion.div>
             </motion.div>
         </motion.div>
     )

@@ -65,12 +65,12 @@ const SeparateText = (props) => {
 
     return (
         <motion.div animate={controls} className='relative flex flex-col items-center'>
-            <motion.div variants={innerBlockVariants} className='px-12 text-gray-50 text-4xl bg-black overflow-hidden' style={{zIndex:1}}>
+            <motion.div variants={innerBlockVariants} className='px-12 text-black text-4xl bg-white overflow-hidden' style={{zIndex:1}}>
                 <motion.div variants={innerTextVariants} className='select-none overflow-hidden'>
                     {innerText}
                 </motion.div>
             </motion.div>
-            <motion.div variants={outerTextVariants} className='text-gray-50 text-7xl bg-black select-none'>
+            <motion.div variants={outerTextVariants} className='text-black text-7xl bg-white select-none'>
                 {outerText}
             </motion.div>
         </motion.div>

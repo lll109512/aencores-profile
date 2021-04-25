@@ -5,7 +5,6 @@ import SeparateText from './animations/SeparateText'
 import { useInView } from 'react-intersection-observer';
 import InfoBlock from './animations/InfoBlock'
 // import avatarImage from 'images/avatar.jpg'
-import Image from 'next/image'
 
 const titleVariants = {
     initial:{
@@ -81,7 +80,7 @@ const ProfileField = (props) => {
                 </motion.div>
                 <motion.div variants={barVariant} className='h-0.5 bg-deepGray mt-4 mb-8'/>
                 <div className='flex flex-row'>
-                    <motion.div variants={titleVariants}>
+                    {/* <motion.div variants={titleVariants}>
                         <Image
                             src="/image/avatar.jpg"
                             alt="Picture of the author"
@@ -89,7 +88,7 @@ const ProfileField = (props) => {
                             height={150}
                             className='object-fit rounded-full'
                         />
-                    </motion.div>
+                    </motion.div> */}
                     <div className='leading-10 text-2xl ml-8'>
                         <motion.div variants={titleVariants}>Hi, I'm Xingyu Li.</motion.div>
                         <motion.div variants={titleVariants}>Master of Artificial Intelligence and Information Technology from University of NSW.</motion.div>

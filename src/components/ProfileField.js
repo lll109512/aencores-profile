@@ -83,7 +83,7 @@ const ProfileField = (props) => {
                 <div className='flex flex-row'>
                     <motion.div variants={titleVariants}>
                         <Image
-                            src="/images/avatar.jpg"
+                            src="/image/avatar.jpg"
                             alt="Picture of the author"
                             width={150}
                             height={150}
